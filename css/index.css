@@ -1,0 +1,93 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: '幼圆';
+}
+a {
+	text-decoration: none;
+}
+body {
+	width: 100%;
+	height: auto;
+}
+.content {
+	width: 99%;
+	height: auto;
+	margin: 0 auto;
+}
+.head_title {
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+	padding: 8px;
+	background-color: #C6E2FF;
+}
+.control_head {
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+	padding: 8px;
+	background-color: #00868B;
+}
+.control_head>input,select{
+	width: auto;
+	height: auto;
+	padding: 5px;
+}
+.control_head p {
+	display: inline;
+}
+#table_type {
+	display: none;
+}
+#table_code {
+	display: none;
+}
+.control_mid {
+	padding: 8px;
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #CD9B9B;
+}
+.input_data {
+	width: 50%;
+	float: left;
+	background-color: #CD9B9B;
+}
+.input_data label{
+	width: 25%;
+	padding: 5px;
+	text-align: center;
+	float: left;
+}
+.input_data input {
+	width: 65%;
+	padding: 5px;
+	float: left;
+}
+.control_table {
+	width: 50%;
+	height: 212px;
+	float: left;
+}
+#txtContent {
+	background-color: #BCD2EE;
+}
+.message {
+	width: 90%;
+	height: 200px;
+	margin: 0 auto;
+	padding: 8px;
+	background-color: #238E68;
+	max-width: 90%;
+	max-height: 200px;
+	overflow: hidden;
+	display: block;
+}
+.code {
+	width: 90%;
+	margin: 0 auto;
+	padding: 8px;
+}
