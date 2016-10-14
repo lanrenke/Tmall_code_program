@@ -48,7 +48,8 @@ function take_code() {
 	var price_title = $('#price_title').val();
 	var str = '';
 		str +=	"<li>"
-		str +=		"<div class='cp-test-"+title_class+" "+localStorage.getItem('model')+"'>"
+		str +=		"<div class='cp-test-"+title_class+"'>"
+		str +=     		"<p class='type' style='display:none'> "+localStorage.getItem('model')+"</p>"
 		str +=			"<a target='_blank' class='href-img-"+title_class+"'><img src='"+localStorage.getItem('imghref') +"' /></a>"
 		str +=			"<div class='head-title-"+title_class+"'>"
 		str +=				"<a target='_blank'>"
