@@ -95,7 +95,40 @@ function post_code() {
 
 	}
 }
+$(document).on('click', '#tabletoexcel', function() {
+	var code = $(".message").val();
+	$(".table_code").append(code);
+	table_make();
+});
+$(document).on('click', '#take_excel', function() {
+	$("#table_cell").table2excel({
+		exclude: ".noExl",
+		name: "Excel Document Name",
+		filename: "myFileName",
+		exclude_img: true,
+		exclude_links: true,
+		exclude_inputs: true
+	});
+});
 
+function table_make() {
+	var li_lenght = $(".table_code li").length - 1;
+	var str = '<table id="table_cell" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td>型号</td><td>标题</td><td>日销价</td><td>活动价</td><td>图片链接</td><td>链接</td><td>编码</td></tr>';
+	for(var i = 0; i <= li_lenght; i++) {
+		var li_child = $(".table_code li:eq(" + i + ")");
+		var message_type, message_picture, message_title, message_nol_price, message_act_price, message_href, message_encoding;
+		message_type = li_child.find('[class="type"]').text();
+		message_picture = li_child.find('img:eq(0)').attr('src');
+		message_title = li_child.find('div:eq(0)').find('p:eq(1)').text();
+		message_nol_price = li_child.find('div:eq(0)').find('span').text();
+		message_act_price = li_child.find('div:eq(0)').find('p:eq(2)').find('em').text();
+		message_href = li_child.find('a:eq(3)').attr('href');
+		message_encoding = li_child.find('[class="cp_encoding"]').text();
+		str += '<tr><td>' + message_type + '</td><td>' + message_title + '</td><td>' + message_nol_price + '</td><td>' + message_act_price + '</td><td>' + message_picture + '</td><td>' + message_href + '</td><td>' + message_encoding + '</td></tr>'
+	}
+	str += '</tbody></table>'
+	$(".table_cell").append(str);
+}
 //核心处理代码，把table表的数据输入到localstorage
 function takerow_data() {
 	var data = new Array();
