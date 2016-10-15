@@ -95,11 +95,27 @@ function post_code() {
 
 	}
 }
-$(document).on('click','#tabletoexcel',function(){
+$(document).on('click', '#tabletoexcel', function() {
 	var code = $(".message").val();
 	$(".table_code").append(code);
-	var li_lenght = $(".table_code li").length;
+	table_excel();
 });
+
+function table_excel(){
+	var li_lenght = $(".table_code li").length - 1;
+	for(var i = 0; i <= li_lenght;i++) {
+		var li_child = $(".table_code li:eq(" + i + ")");
+		var message_type, message_picture, message_title, message_nol_price, message_act_price, message_href, message_encoding;
+		message_type = li_child.find('[class="type"]').text();
+		message_picture = li_child.find('img:eq(0)').attr('src');
+		message_title = li_child.find('div:eq(0)').find('p:eq(1)').text();
+		message_nol_price = li_child.find('div:eq(0)').find('span').text();
+		message_act_price = li_child.find('div:eq(0)').find('p:eq(2)').find('em').text();
+		message_href = li_child.find('a:eq(3)').attr('href');
+		message_encoding = li_child.find('[class="cp_encoding"]').text();
+		console.log(message_type, message_picture, message_title, message_nol_price, message_act_price, message_href, message_encoding);
+	}
+}
 
 
 //核心处理代码，把table表的数据输入到localstorage
