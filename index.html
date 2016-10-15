@@ -17,6 +17,7 @@
 		</script>
 		<script src="js/jquery.base64.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/tableExport.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/table2excel.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body style="background-color: #D8D8BF;">
@@ -26,6 +27,7 @@
 				<input id="make_btn" type="button" value="输入数据" />
 				<input id="clear_data" type="button" value="清除所有内容" />
 				<input id="tabletoexcel" type="button" value="生成表格" />
+				<input id="take_excel" type="button" value="导出excel" />
 				<p>类名</p>
 				<input id="title_class" type="text" value="" />
 				<p>价格前缀(注意)</p>
@@ -44,6 +46,7 @@
 				</div>
 			</div>
 			<div class="table_code"></div>
+			<div class="table_cell"></div>
 			<div class="input_data" style="display: none;">
 				<label>产品型号</label><input id="model" type="text" />
 				<label>产品标题</label><input id="title" type="text" />
