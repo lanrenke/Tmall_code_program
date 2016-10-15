@@ -124,7 +124,7 @@ function table_make() {
 		message_act_price = li_child.find('div:eq(0)').find('p:eq(2)').find('em').text();
 		message_href = li_child.find('a:eq(3)').attr('href');
 		message_encoding = li_child.find('[class="cp_encoding"]').text();
-		str += '<tr><td>' + message_type + '</td><td>' + message_picture + '</td><td>' + message_title + '</td><td>' + message_nol_price + '</td><td>' + message_act_price + '</td><td>' + message_href + '</td><td>' + message_encoding + '</td></tr>'
+		str += '<tr><td>' + message_type + '</td><td>' + message_title + '</td><td>' + message_nol_price + '</td><td>' + message_act_price + '</td><td>' + message_picture + '</td><td>' + message_href + '</td><td>' + message_encoding + '</td></tr>'
 	}
 	str += '</tbody></table>'
 	$(".table_cell").append(str);
