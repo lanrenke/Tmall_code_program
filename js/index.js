@@ -95,6 +95,12 @@ function post_code() {
 
 	}
 }
+$(document).on('click','#tabletoexcel',function(){
+	var code = $(".message").val();
+	$(".table_code").append(code);
+	var li_lenght = $(".table_code li").length;
+});
+
 
 //核心处理代码，把table表的数据输入到localstorage
 function takerow_data() {
