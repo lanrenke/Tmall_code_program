@@ -95,11 +95,13 @@ function post_code() {
 
 	}
 }
+//导出excel功能
 $(document).on('click', '#tabletoexcel', function() {
 	var code = $(".message").val();
 	$(".table_code").append(code);
 	table_make();
 });
+//调用插件
 $(document).on('click', '#take_excel', function() {
 	$("#table_cell").table2excel({
 		exclude: ".noExl",
@@ -110,7 +112,7 @@ $(document).on('click', '#take_excel', function() {
 		exclude_inputs: true
 	});
 });
-
+//读取数据 生成table到页面
 function table_make() {
 	var li_lenght = $(".table_code li").length - 1;
 	var str = '<table id="table_cell" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td>型号</td><td>标题</td><td>日销价</td><td>活动价</td><td>图片链接</td><td>链接</td><td>编码</td></tr>';
